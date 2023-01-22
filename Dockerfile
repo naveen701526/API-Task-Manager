@@ -2,6 +2,7 @@
 # Build stage
 #
 FROM openjdk:17-jdk-alpine AS build
+RUN apk add maven
 COPY . .
 RUN mvn clean package -DskipTests
 
