@@ -20,7 +20,7 @@ import com.example.spring.mongo.connect.model.Task;
 import com.example.spring.mongo.connect.repository.TaskRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://task-manager-app-angular.netlify.app/")
 @RequestMapping("/api/tasks")
 public class TaskController {
 	
