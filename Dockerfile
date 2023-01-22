@@ -1,11 +1,13 @@
-# Use the OpenJDK 17 image as the base image
-FROM openjdk:17
+# Build stage
+#
+FROM maven:3.8.3-jdk-17 AS build
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Expose port 8080
+#
+# Package stage
+#
+FROM openjdk:17-jdk-slim
+COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8080
-
-# Add the jar file to the container
-ADD target/spring-boot-docker.jar spring-boot-docker.jar 
-
-# Set the entry point to run the jar file
-ENTRYPOINT ["java","-jar","/spring-boot-docker.jar"]
+ENTRYPOINT ["java","-jar","demo.jar"]
