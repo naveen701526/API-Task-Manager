@@ -21,3 +21,15 @@ You should now be seeing the output in the terminal.
 # Deployment Link
 
 https://api-task-manager-o0lr.onrender.com
+
+# Working End Points of API
+
+## API END POINT : https://api-task-manager-o0lr.onrender.com/api/tasks
+
+### GET ALL TASKS : /getAllTasks
+
+### POST A SINGLE TASK : /createTask
+
+### UPDATE A SINGLE TASK : /updateTask/{id}
+
+### DELETE A SINGLE TASK : /deleteTask/{id}
